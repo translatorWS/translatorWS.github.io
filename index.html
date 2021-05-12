@@ -1,7 +1,129 @@
 <html>
+    <head>
+        <title>Nikc's Notes - Projects</title>
+        
+        <style>
+            
+            body{
+                font-size: 16px;
+                font-family: sans-serif;
+                background-color: rgba(217, 236, 254, 0.3);
+            }
+        
+            main{
+                border: 3px solid black;
+                border-radius: 2em;
+                padding: 1em;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: white;
+            }
+            
+            nav{
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            h1{
+                font-size: 3em;
+            }
+            
+            // Classes //
+            
+            .noSpacingDown{
+                margin-bottom: 0.2em;
+            }
+            
+            
+            // Mobile Specific Changes //
+            
+            .imgGrid{
+                display: grid;
+            }
+            
+            .imgGrid div{
+                display: inline-block;
+                background-color: rgba(217, 236, 254, 0.2);
+                border: 0px solid black;
+                border-radius: 2em;
+                padding: 1em;
+                text-align:center;
+            }
+            .imgGrid div:hover{
+                background-color: rgba(217, 236, 254, 0.5);
+                border: 0px solid black;
+                border-radius: 2em;
+            }
+            @media only screen and (max-width: 600px) {
+            
+                .imgGrid{
+                    grid-template-columns: auto;
+                    text-align:center;
+                }
+                
+            }
+            @media only screen and (min-width: 600px) {
+            
+                .imgGrid{
+                    grid-template-columns: auto auto auto auto;
+                    text-align:center;
+                }
+                
+            }
+            
+        
+        </style>
+        
+        
+    </head>
 
-<body>
-<b>Website Coming Soonish</b>
+    <body>
 
-</body>
+        <nav>
+            <h1 class="noSpacingDown">Projects</h1>
+        </nav>
+        
+        
+        <main>
+
+
+            <p>
+                Here's a listing of all in-progress and released translation patches I've worked on.<br>
+                (This page itself is also currently <i>in-progress</i>)
+            </p>
+            
+
+            <h2>In-Progress</h2>
+            
+            <div class="imgGrid">
+            
+                <div>
+                    <img src="img/d1tamers-title.png" alt="Digimon Adventure 02: D-1 Tamers"><br>
+                    <b>Digimon Adventure 02: D-1 Tamers</b><br>
+                    (<i>Wonderswan</i>)
+                </div>
+                
+                <div>
+                    <img src="img/arctheladws-title.png" alt="Arc the Lad: Kijin Fukkatsu"><br>
+                    <b>Arc the Lad: Kijin Fukkatsu</b><br>
+                    (<i>Wonderswan</i>)
+                </div>
+            
+            </div>
+            
+            
+            
+            <!-- -------------------------------- -->
+            
+            
+            
+            <h2>Released</h2>
+
+
+
+        </main>
+
+    </body>
 </html>
