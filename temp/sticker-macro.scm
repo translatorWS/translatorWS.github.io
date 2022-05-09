@@ -1,8 +1,11 @@
 (define (script-fu-sticker-template image layer)
 
-  (define width (car (gimp-image-width image)))
-  (define height (car (gimp-image-height image)))
-  (define new-height (/ (* height 4200) width))
+  (define width (car (gimp-drawable-width layer)))
+  (define height (car (gimp-drawable-height layer)))
+  (define ratio (/ 4200 width))
+  (define new-height (abs (* height ratio)))
+  (define wlimiter 4200)
+  (define limiter 3300)
   
     (define (upper-point-x)
     (let* ((up-x (cons-array 17 'double)))
@@ -565,13 +568,12 @@
 (aset lval-y 252 132)
 (aset lval-y 253 132)
 (aset lval-y 254 132)
-(aset lval-y 255 132)   
-))         
+(aset lval-y 255 132)
+))
 
   (gimp-context-set-interpolation 2) ;Set scaling to INTERPOLATION-CUBIC
   (gimp-image-scale image 4200 new-height)
-  (gimp-image-resize image 4200 3300 0 (/ (- 3300 new-height) 2))
-  (gimp-displays-flush)
+  (define offset2 (inexact->exact (round (/ (abs (- 3300 new-height)) 2))))
   (plug-in-curve-bend 1 image layer 0 TRUE TRUE FALSE 0 '17 (upper-point-x) '17 (upper-point-y) '17 (upper-point-x) '17 (upper-point-y) '256 (upper-val-y) '256 (lower-val-y))
   (gimp-displays-flush)
 )
